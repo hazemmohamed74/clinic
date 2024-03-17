@@ -13,6 +13,9 @@ export const initApp = (app,express)=>{
 
 
     app.use(cors())
+    app.get("/",(req,res,next)=>{
+        res.status(200).json({msg:"welcome to my clinic"})
+    })
     app.use(express.json())
     app.use("/bookings", bookingroutes)
     app.use("/admins", adminroutes)
