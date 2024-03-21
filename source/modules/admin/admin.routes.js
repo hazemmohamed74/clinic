@@ -16,7 +16,7 @@ router.post("/signUp",
     validation(AV.signin),
     AC.signUp)
 
-router.get("/search",
+router.post("/search",
     auth(validRoles.Admin),
     validation(AV.searchAdmin),
     AC.searchAdmin)
