@@ -63,8 +63,7 @@ export const login = asyncHandler( async (req, res, next) => {
 })
 
 export const getAllUsers = asyncHandler( async (req, res) => {
-    appointmentModel.find({}, null, { lean: true }, (err, data) => {
-        if (err) return res.status(500).json({ msg: "something went wrong" });
-        res.json(data);
-    });
+    appointmentModel.find({}, null, { lean: true })
+    .then((data)=>res.json(data))
+    .catch((err)=>res.status(500).json({ msg: "something went wrong" }))
 })
