@@ -19,7 +19,6 @@ const appointmentSchema = new Schema ({
     email :{
         type: String,
         requeried : [true , "email is requeried"],
-        unique : [true , "email is unique"],
         trim : true,
         lowercase : true
     },
