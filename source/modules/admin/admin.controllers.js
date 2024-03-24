@@ -26,7 +26,7 @@ export const signUp = asyncHandler(async(req,res,next)=>{
 export const searchAdmin = asyncHandler(async(req,res,next)=>{
 
     const {phone,firstname,lastname,email} = req.body
-const userExist = await appointmentModel.find({
+const userExist = await appointmentModel.findOne({
     $or: [
         { phone },
         { firstname },
