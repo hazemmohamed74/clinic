@@ -27,12 +27,9 @@ export const searchAdmin = asyncHandler(async(req,res,next)=>{
 
     const {phone,firstname,lastname,email} = req.body
 const userExist = await appointmentModel.find({
-    $or: [
-        { phone },
-        { firstname },
-        { lastname },
-        { email }
-    ]
+
+        phone 
+
 });    if (!userExist) {
         return  next(new AppError("you are not booking", 500))
     }
