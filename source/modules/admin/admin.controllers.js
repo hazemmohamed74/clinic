@@ -48,9 +48,9 @@ export const login = asyncHandler( async (req, res, next) => {
             return res.status(401).json({ message: "Invalid email or password" });
         }
         const token = jwt.sign(
-            { email: admin.email, id: admin._id },
-            'hazem', 
-            { expiresIn: '24h' } 
+          { email: admin.email, id: admin._id },
+          process.env.SIGNATURE,
+          { expiresIn: '24h' }
         );
         res.status(200).json({ token });
     } catch (error) {
