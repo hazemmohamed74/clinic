@@ -8,7 +8,7 @@ import * as BV from "./booking.validation.js";
 const router = Router()
 
 router.post("/create",
-// auth(validRoles.User),
+auth(validRoles.User),
 validation(BV.createbooking),
 BC.createbooking)
 
