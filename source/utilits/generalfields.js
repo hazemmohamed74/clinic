@@ -5,7 +5,7 @@ const objectIdValidation = (value, helper) => {
 }
 
 export const generalFiled = {
-    email: joi.string().email({ tlds: { allow: ["outlook", "com"] }, minDomainSegments: 2 }).required(),
+    email: joi.string().email({ tlds: { allow: ["outlook", "com"] }, minDomainSegments: 2 }),
     // password: joi.string().regex(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/).required(),
     rePassword: joi.string().valid(joi.ref("password")).required(),
     industry: joi.string().required(),
